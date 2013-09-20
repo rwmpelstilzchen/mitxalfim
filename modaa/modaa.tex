@@ -9,8 +9,9 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows, decorations.markings, positioning}
 \definecolor{cevaA}{HTML}{8B6639}
-\definecolor{plant}{HTML}{029044}
+\definecolor{cevaB}{HTML}{029044}
 \definecolor{daf}{HTML}{C0DA91}
+
 %\pagecolor{cevaA}
 \pagecolor{daf}
 \color{cevaA}
@@ -31,7 +32,7 @@
 	AutoFakeSlant=-0.15,
 	BoldFont={Rutz_OE Bold Pro}]
 	{Rutz_OE Regular Pro}
-	\newcommand{\hl}[1]{\textbf{\color{plant}#1}}
+	\newcommand{\hl}[1]{\textbf{\color{cevaB}#1}}
 
 % for double arrows a la chef
 % adapt line thickness and line width, if needed
@@ -41,9 +42,9 @@
 %   postaction = {draw,line width=1.4pt, white,shorten >= 4.5pt}]
 \tikzstyle{vecArrow} = [
 	line width = 8pt,
-	decoration={markings, mark = at position 1 with {\arrow[line width=5pt, color = cevaA!50!plant]{triangle 60}}},
+	decoration={markings, mark = at position 1 with {\arrow[line width=5pt, color = cevaA!50!cevaB]{triangle 60}}},
 	shorten >= 5.5pt,
-	color = cevaA!50!plant,
+	color = cevaA!50!cevaB,
 	preaction = {decorate}
 ]
 
@@ -56,9 +57,12 @@
 %\AddToShipoutPicture{\BackgroundPic}
 
 \begin{center}
-	~
-	\vfill
+	\vskip-5cm
+	\begin{tikzpicture}
+		\node[opacity=0.2] {\includegraphics[width=\textwidth]{kvisa.eps}};
+	\end{tikzpicture}
 
+	%\vspace{-1cm}
 	\fontsize{30}{36}\selectfont
 	\begin{tikzpicture}[thick]
 		\node (a) {\parbox{16cm}{\centering\setRL\color{cevaA} יש לכם \hl{חפצים מיותרים}\\שסתם תופסים מקום?}};
@@ -76,12 +80,13 @@
 	{\fontsize{50}{60}\selectfont
 		\textbf{\textcolor{cevaA}{בואו לאירוע}}
 
-		{\fontspec[Script=Hebrew]{HPLJPM+AlenbiSerif}\fontsize{70}{84}\selectfont\textcolor{plant}{מתחלפים בגבעה}} %מִתְחַלְּפִים בַּגִּבְעָה
+		{\fontspec[Script=Hebrew]{HPLJPM+AlenbiSerif}\fontsize{70}{84}\selectfont\textcolor{cevaB}{מתחלפים בגבעה}} %מִתְחַלְּפִים בַּגִּבְעָה
 
 		\vspace{0.5ex}
 		\textbf{\textcolor{cevaA}{שיתקיים ביום X ב־Y ב־Z}}
 	}
 
+	\vfill
 	\vfill
 
 	\color{cevaA}
@@ -90,6 +95,9 @@
 	יהיה \hl{חומוס} ביתי, \hl{מוזיקה} טובה ו\hl{אווירה} טובה {\fontspec{Symbola}☺}
 
 	\vfill
-	~
+
+	\begin{tikzpicture}
+		\node[opacity=0.2] {\includegraphics[width=0.9\linewidth]{sfarim.eps}};
+	\end{tikzpicture}
 \end{center}
 \end{document}
