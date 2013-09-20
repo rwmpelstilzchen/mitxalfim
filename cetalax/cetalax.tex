@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+\usepackage[landscape, a4paper, margin=0.2cm]{geometry}
+\pagestyle{empty}
+
+\setlength\parskip{0pt}
+\setlength\parindent{0pt}
+
+\usepackage{graphicx, xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows, decorations.markings, positioning}
+
+\usepackage{fontspec}
+\usepackage[RTLdocument]{bidi}
+\setmainfont[Script=Hebrew,
+	AutoFakeSlant=-0.15,
+	BoldFont={Rutz_OE Bold Pro}]
+	{Rutz_OE Regular Pro}
+\newcommand{\hl}[1]{\textbf{#1}}
+
+% for double arrows a la chef
+% adapt line thickness and line width, if needed
+\tikzstyle{vecArrow} = [thick, decoration={markings,mark=at position 1 with {\arrow[semithick]{open triangle 60}}},
+   double distance=1.4pt, shorten >= 5.5pt,
+   preaction = {decorate},
+   postaction = {draw,line width=1.4pt, white,shorten >= 4.5pt}]
+\tikzstyle{innerWhite} = [semithick, white,line width=1.4pt, shorten >= 4.5pt]
+
+\newcommand{\cetale}{%
+	\begin{minipage}{9cm}
+		\begin{center}
+			\begin{tikzpicture}[thick]
+				\node (a) {\parbox{6cm}{\centering\setRL יש לכם \hl{חפצים מיותרים}\\שסתם תופסים מקום?}};
+				\node [below = 0.0cm of a] (b) {\parbox{6cm}{\centering\setRL רוצים \hl{שמלה} מהממת, \hl{ספר} מרתק,\\ו\hl{אוצרות} שאפילו לא חלמתם עליהם?}};
+				\node [inner sep=0,minimum size=0,right = of a] (x) {}; % invisible node
+				\node [inner sep=0,minimum size=0,left = of b] (y) {}; % invisible node
+				%\draw [vecArrow] (a) to (x);
+				\draw [vecArrow] (a) |- (x) |- (b);
+				\draw [vecArrow] (b) to (y) |- (a);
+				%\draw [->] (y) |- (a);
+			\end{tikzpicture}
+
+			{\fontsize{20}{24}\selectfont
+				בואו לאירוע
+
+				\vspace{2pt}
+				%{\fontsize{30}{36}\selectfont \textbf{מתחלפים בגבעה}} %מִתְחַלְּפִים בַּגִּבְעָה
+				{\fontspec[Script=Hebrew]{HPLJPM+AlenbiSerif}\fontsize{30}{36}\selectfont {מתחלפים בגבעה}} %מִתְחַלְּפִים בַּגִּבְעָה
+
+				\vspace{3pt}
+				שיתקיים ביום X ב־Y ב־Z
+			}
+
+			\vspace{0.25cm}
+
+			לפרטים פנו ל\hl{סמדר} בטל׳~050-5658042
+
+			יהיה \hl{חומוס} ביתי, \hl{מוזיקה} טובה ו\hl{אווירה} טובה {\fontspec{Symbola}☺}
+
+			\vspace{0.2cm}
+			\tiny —~נא למחזר אותי {\fontspec{Symbola}♻}~—
+		\end{center}
+	\end{minipage}
+}
+
+\newcommand{\cetalax}{\cetale \hfill \cetale \hfill \cetale}
+
+\begin{document}
+\cetalax
+\vfill
+\cetalax
+\vfill
+\cetalax
+\end{document}
