@@ -1,5 +1,5 @@
 \documentclass[12pt]{article}
-\usepackage[a4paper, margin=0.2cm]{geometry}
+\usepackage[a4paper, margin=0.2cm, right=0.1cm]{geometry}
 \pagestyle{empty}
 
 \setlength\parskip{0pt}
@@ -33,6 +33,7 @@
 	BoldFont={Rutz_OE Bold Pro}]
 	{Rutz_OE Regular Pro}
 	\newcommand{\hl}[1]{\textbf{\color{cevaB}#1}}
+\renewcommand{\L}[1]{\LR{\fontspec{Vesper Pro}#1}}
 
 % for double arrows a la chef
 % adapt line thickness and line width, if needed
@@ -48,25 +49,26 @@
 	preaction = {decorate}
 ]
 
- \tikzstyle{innerWhite} = [semithick, white,line width=1.4pt, shorten >= 4.5pt]
- 
- 
+
 
 \begin{document}
 \TileWallPaper{20pt}{20pt}{nekuda.eps} % By Mauricio Duque <http://www.snap2objects.com/2009/05/free-clothing-vector-silhouettes/>
 %\AddToShipoutPicture{\BackgroundPic}
 
 \begin{center}
-	\vskip-5cm
+	\vspace{2cm}
+	~
 	\begin{tikzpicture}
-		\node[opacity=0.2] {\includegraphics[width=\textwidth]{kvisa.eps}};
+		\node[opacity=0.2] {\includegraphics[width=0.9\linewidth]{kvisa.eps}};
 	\end{tikzpicture}
+
+	\vfill
 
 	%\vspace{-1cm}
 	\fontsize{30}{36}\selectfont
 	\begin{tikzpicture}[thick]
-		\node (a) {\parbox{16cm}{\centering\setRL\color{cevaA} יש לכם \hl{חפצים מיותרים}\\שסתם תופסים מקום?}};
-		\node [below = 0.0cm of a] (b) {\parbox{16cm}{\centering\setRL\color{cevaA} רוצים \hl{שמלה} מהממת, \hl{ספר} מרתק,\\ו\hl{אוצרות} שאפילו לא חלמתם עליהם?}};
+		\node (a) {\parbox{15cm}{\centering\setRL\color{cevaA} יש לכם \hl{חפצים מיותרים}\\שסתם תופסים מקום?}};
+		\node [below = 0.0cm of a] (b) {\parbox{15cm}{\centering\setRL\color{cevaA} רוצים \hl{שמלה} מהממת, \hl{ספר} מרתק,\\ו\hl{אוצרות} שאפילו לא חלמתם עליהם?}};
 		\node [inner sep=0,minimum size=0,right = of a] (x) {}; % invisible node
 		\node [inner sep=0,minimum size=0,left = of b] (y) {}; % invisible node
 		%\draw [vecArrow] (a) to (x);
@@ -80,19 +82,27 @@
 	{\fontsize{50}{60}\selectfont
 		\textbf{\textcolor{cevaA}{בואו לאירוע}}
 
-		{\fontspec[Script=Hebrew]{HPLJPM+AlenbiSerif}\fontsize{70}{84}\selectfont\textcolor{cevaB}{מתחלפים בגבעה}} %מִתְחַלְּפִים בַּגִּבְעָה
-
-		\vspace{0.5ex}
-		\textbf{\textcolor{cevaA}{שיתקיים ביום X ב־Y ב־Z}}
+		\vspace{0.3cm}
+		{~\hfill\fontspec[Script=Hebrew]{HPLJPM+AlenbiSerif}\fontsize{70}{84}\selectfont\textcolor{cevaB}{מתחלפים בגבעה}~\hfill~}
 	}
 
+	{\textcolor{cevaA}{שיתקיים ביום \hl{שישי} ה־2013/10/18\\
+			בשעות \hl{10:00-13:00}\\
+			במועדון „\hl{הארטישוק}”\addfontfeature{Scale=0.6}\\
+			{\vspace{-0.3cm}(ההגנה 25, מאחורי בנק הפועלים במרכז המסחרי)}
+	}}
+
 	\vfill
+
+	\color{cevaA}
+	{\fontspec{Entypo Social}\color{cevaA}} חפשו „\hl{מתחלפים בגבעה}” בפייסבוק
+
 	\vfill
 
 	\color{cevaA}
 	לפרטים פנו ל\hl{סמדר} בטל׳~050-5658042
 
-	יהיה \hl{חומוס} ביתי, \hl{מוזיקה} טובה ו\hl{אווירה} טובה {\fontspec{Symbola}☺}
+	יהיו \hl{חומוס} ביתי, \hl{מוזיקה} משובחת ו\hl{אווירה} טובה {\fontspec{Symbola}☺}
 
 	\vfill
 	\vfill
